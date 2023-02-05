@@ -1,21 +1,13 @@
-/* Complete the solution so that it returns true if the first argument(string) 
-passed in ends with the 2nd argument (also a string).
+/*
+Create Phone Number
+Write a function that accepts an array of 10 integers (between 0 and 9),
+that returns a string of those numbers in the form of a phone number.
 example:
-  solution('abc', 'bc') // returns true
-  solution('abc', 'd') // returns false
+  createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) // => returns "(123) 456-7890"
 */
 
-function solution(str, ending) {
-  let endArray = ending.split("");
-  let strArray = str.split("").slice(endArray.length * -1);
-
-  for (let i = 0; i < endArray.length; i++) {
-    if (strArray[i] !== endArray[i]) {
-      return false;
-    }
-  }
-  return true;
+function createPhoneNumber(numbers) {
+  return `(${numbers[0]}${numbers[1]}${numbers[2]}) ${numbers[3]}${numbers[4]}${numbers[5]}-${numbers[6]}${numbers[7]}${numbers[8]}${numbers[9]}`;
 }
 
-console.log(solution("abc", "abcd"));
-console.log(solution("abcdef", "d"));
+console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
