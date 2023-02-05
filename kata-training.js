@@ -1,13 +1,34 @@
 /*
-Create Phone Number
-Write a function that accepts an array of 10 integers (between 0 and 9),
-that returns a string of those numbers in the form of a phone number.
-example:
-  createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) // => returns "(123) 456-7890"
+Sum of odd numbers
+Given the triangle of consecutive odd numbers:
+             1
+          3     5
+       7     9    11
+   13    15    17    19
+21    23    25    27    29
+...
+
+Calculate the sum of the numbers in the nth row of this triangle (starting at index 1) e.g.: (Input --> Output)
+  1 -->  1
+  2 --> 3 + 5 = 8
 */
 
-function createPhoneNumber(numbers) {
-  return `(${numbers[0]}${numbers[1]}${numbers[2]}) ${numbers[3]}${numbers[4]}${numbers[5]}-${numbers[6]}${numbers[7]}${numbers[8]}${numbers[9]}`;
+function rowSumOddNumbers(n) {
+  // return n * n * n;
+  let number = 1;
+  for (let i = 0; i < n; i++) {
+    // let s = "";
+    let count = 0;
+    for (let j = 0; j <= i; j++) {
+      // s += number + " ";
+      count += number;
+      number += 2;
+    }
+    if (i === n - 1) {
+      return count;
+    }
+    // console.log(s);
+  }
 }
 
-console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
+console.log(rowSumOddNumbers(42));
