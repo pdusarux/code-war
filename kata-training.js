@@ -9,7 +9,7 @@ function solution(str, ending) {
   let endArray = ending.split("");
   let strArray = str.split("").slice(endArray.length * -1);
 
-  for (let i = 0; i < strArray.length; i++) {
+  for (let i = 0; i < endArray.length; i++) {
     if (strArray[i] !== endArray[i]) {
       return false;
     }
@@ -17,5 +17,5 @@ function solution(str, ending) {
   return true;
 }
 
-console.log(solution("abcde", "cde"));
+console.log(solution("abc", "abcd"));
 console.log(solution("abcdef", "d"));
