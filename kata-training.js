@@ -1,34 +1,31 @@
 /*
-Sum of odd numbers
-Given the triangle of consecutive odd numbers:
-             1
-          3     5
-       7     9    11
-   13    15    17    19
-21    23    25    27    29
-...
+Disemvowel Trolls
 
-Calculate the sum of the numbers in the nth row of this triangle (starting at index 1) e.g.: (Input --> Output)
-  1 -->  1
-  2 --> 3 + 5 = 8
+For example, the string "This website is for losers LOL!" would become "Ths wbst s fr lsrs LL!".
 */
 
-function rowSumOddNumbers(n) {
-  // return n * n * n;
-  let number = 1;
-  for (let i = 0; i < n; i++) {
-    // let s = "";
-    let count = 0;
-    for (let j = 0; j <= i; j++) {
-      // s += number + " ";
-      count += number;
-      number += 2;
+function disemvowel(str) {
+  const txt = str.split("");
+  let newTxt = [];
+  const vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+  for (let i = 0; i < txt.length; i++) {
+    const element = txt[i];
+    if (!vowels.includes(element)) {
+      newTxt.push(element);
     }
-    if (i === n - 1) {
-      return count;
-    }
-    // console.log(s);
   }
+  return newTxt.join("");
 }
 
-console.log(rowSumOddNumbers(42));
+console.log(disemvowel("This website is for losers LOL!"));
+
+// shortest solution by chatGPT
+// function disemvowel(str) {
+//   const vowels = "aeiouAEIOU";
+//   return str
+//     .split("")
+//     .filter((c) => !vowels.includes(c))
+//     .join("");
+// }
+
+// console.log(disemvowel("This website is for losers LOL!"));
