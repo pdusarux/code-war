@@ -1,5 +1,5 @@
-const stringToNumber = function (str) {
-  return parseInt(str);
-};
+function booleanToString(b) {
+  return b.toString();
+}
 
-console.log(stringToNumber("1234"));
+console.log(booleanToString(true));
