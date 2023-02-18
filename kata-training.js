@@ -1,18 +1,40 @@
-function findNeedle(haystack) {
-  return `found the needle at position ${haystack.indexOf("needle")}`;
+/*
+Complementary DNA
+  sol => A & T , C & G
+
+Example: (input --> output)
+"ATTGC" --> "TAACG"
+"GTAT" --> "CATA"
+*/
+
+function DNAStrand(dna) {
+  return dna
+    .split("")
+    .map((e) => convertDNA(e))
+    .join("");
 }
 
-var haystack_1 = [
-  "3",
-  "123124234",
-  undefined,
-  "needle",
-  "world",
-  "hay",
-  2,
-  "3",
-  true,
-  false,
-];
+function convertDNA(e) {
+  switch (e) {
+    case "A":
+      return "T";
 
-console.log(findNeedle(haystack_1));
+    case "T":
+      return "A";
+
+    case "C":
+      return "G";
+
+    case "G":
+      return "C";
+  }
+}
+
+console.log(DNAStrand("TAAA"));
+
+// shortest solution by chatGPT
+// function DNAStrand(dna) {
+//   return dna.replace(/./g, function(char) {
+//     return { A: "T", T: "A", C: "G", G: "C" }[char];
+//   });
+// }
