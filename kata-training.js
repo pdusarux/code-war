@@ -1,40 +1,15 @@
 /*
-Complementary DNA
-  sol => A & T , C & G
+Beginner Series #2 Clock
+Your task is to write a function which returns the time since midnight in milliseconds.
 
-Example: (input --> output)
-"ATTGC" --> "TAACG"
-"GTAT" --> "CATA"
+h = 0
+m = 1
+s = 1
+result = 61000
 */
 
-function DNAStrand(dna) {
-  return dna
-    .split("")
-    .map((e) => convertDNA(e))
-    .join("");
+function past(h, m, s) {
+  return h * 60 * 60000 + m * 60000 + s * 1000;
 }
 
-function convertDNA(e) {
-  switch (e) {
-    case "A":
-      return "T";
-
-    case "T":
-      return "A";
-
-    case "C":
-      return "G";
-
-    case "G":
-      return "C";
-  }
-}
-
-console.log(DNAStrand("TAAA"));
-
-// shortest solution by chatGPT
-// function DNAStrand(dna) {
-//   return dna.replace(/./g, function(char) {
-//     return { A: "T", T: "A", C: "G", G: "C" }[char];
-//   });
-// }
+console.log(past(1, 1, 1));
