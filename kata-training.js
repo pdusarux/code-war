@@ -1,5 +1,5 @@
-function booleanToString(b) {
-  return b.toString();
+function paperwork(n, m) {
+  return n < 0 || m < 0 ? 0 : n * m;
 }
 
-console.log(booleanToString(true));
+console.log(paperwork(44, 77));
