@@ -1,31 +1,27 @@
 /*
-Disemvowel Trolls
+List Filtering
+In this kata you will create a function that takes a list of non-negative integers 
+and strings and returns a new list with the strings filtered out.
 
-For example, the string "This website is for losers LOL!" would become "Ths wbst s fr lsrs LL!".
+filter_list([1,2,'a','b']) == [1,2]
+filter_list([1,'a','b',0,15]) == [1,0,15]
+filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
 */
 
-function disemvowel(str) {
-  const txt = str.split("");
-  let newTxt = [];
-  const vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
-  for (let i = 0; i < txt.length; i++) {
-    const element = txt[i];
-    if (!vowels.includes(element)) {
-      newTxt.push(element);
+function filter_list(l) {
+  let newList = [];
+
+  l.forEach((e) => {
+    if (typeof e === "number" && e >= 0) {
+      newList.push(e);
     }
-  }
-  return newTxt.join("");
+  });
+  return newList;
 }
 
-console.log(disemvowel("This website is for losers LOL!"));
+console.log(filter_list([1, 2, "a", "b"]));
 
 // shortest solution by chatGPT
-// function disemvowel(str) {
-//   const vowels = "aeiouAEIOU";
-//   return str
-//     .split("")
-//     .filter((c) => !vowels.includes(c))
-//     .join("");
+// function filter_list(l) {
+//   return l.filter(e => typeof e === 'number' && e >= 0);
 // }
-
-// console.log(disemvowel("This website is for losers LOL!"));
