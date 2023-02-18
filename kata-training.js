@@ -1,5 +1,5 @@
-function check(a, x) {
-  return a.includes(x);
+function simpleMultiplication(number) {
+  return number % 2 == 0 ? number * 8 : number * 9;
 }
 
-console.log(check(["what", "a", "great", "kata"], "kat"));
+console.log(simpleMultiplication(9));
