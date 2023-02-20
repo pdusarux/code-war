@@ -1,21 +1,22 @@
 /*
-Number of trailing zeros of N!
+Find the smallest integer in the array
+For example:
 
-Examples
-zeros(6) = 1
-# 6! = 1 * 2 * 3 * 4 * 5 * 6 = 720 --> 1 trailing zero
-
-zeros(12) = 2
-# 12! = 479001600 --> 2 trailing zeros
+Given [34, 15, 88, 2] your solution will return 2
+Given [34, -345, -1, 100] your solution will return -345
 */
 
-function zeros(n) {
-  let count = 0;
-  while (n >= 5) {
-    n = Math.floor(n / 5);
-    count += n;
+class SmallestIntegerFinder {
+  findSmallestInt(args) {
+    let sum = args[0];
+    for (let i = 0; i < args.length; i++) {
+      if (sum > args[i]) {
+        sum = args[i];
+      }
+    }
+    return sum;
   }
-  return count;
 }
 
-console.log(zeros(1000));
+const finder = new SmallestIntegerFinder();
+console.log(finder.findSmallestInt([78, 56, 232, 412, 228]));
